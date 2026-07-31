@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Precision Craft Landscaping | Hardscape &amp; Interlock, Ottawa</title>
+<meta name="description" content="Premium hardscape construction, interlock installation, and luxury backyard renovations in Ottawa, Barrhaven, Manotick, Stittsville, Kanata, Orleans and Westboro.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --charcoal:#20221c;
+    --charcoal-2:#2a2c24;
+    --forest:#333c2e;
+    --stone:#8b8377;
+    --stone-light:#eeeae1;
+    --paper:#f7f5f0;
+    --brass:#a97c3d;
+    --brass-light:#c9a063;
+    --line: rgba(238,234,225,0.16);
+    --line-dark: rgba(32,34,28,0.12);
+    --radius: 2px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+  }
+
+  body{
+    margin:0;
+    font-family:'Inter', sans-serif;
+    background:var(--paper);
+    color:var(--charcoal);
+    line-height:1.55;
+  }
+
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+
+  .mono{
+    font-family:'IBM Plex Mono', monospace;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+  }
+
+  a{color:inherit;}
+  img{max-width:100%; display:block;}
+  button{font-family:inherit;}
+
+  :focus-visible{
+    outline:2px solid var(--brass);
+    outline-offset:3px;
+  }
+
+  .wrap{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 32px;
+  }
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:fixed;
+    top:0; left:0; right:0;
+    z-index:100;
+    background:rgba(32,34,28,0.0);
+    transition:background 0.35s ease, box-shadow 0.35s ease;
+  }
+  header.scrolled{
+    background:rgba(32,34,28,0.94);
+    box-shadow:0 1px 0 var(--line);
+    backdrop-filter:blur(6px);
+  }
+  .nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:22px 32px;
+    max-width:1180px;
+    margin:0 auto;
+  }
+  .logo{
+    font-family:'Fraunces', serif;
+    font-size:19px;
+    color:var(--stone-light);
+    letter-spacing:0.02em;
+    display:flex;
+    flex-direction:column;
+    line-height:1.1;
+  }
+  .logo small{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:9.5px;
+    letter-spacing:0.22em;
+    color:var(--brass-light);
+    margin-top:4px;
+    text-transform:uppercase;
+  }
+  .nav-links{
+    display:flex;
+    gap:40px;
+    list-style:none;
+    margin:0; padding:0;
+  }
+  .nav-links a{
+    text-decoration:none;
+    color:var(--stone-light);
+    font-size:14px;
+    font-weight:500;
+    position:relative;
+    padding-bottom:4px;
+  }
+  .nav-links a::after{
+    content:"";
+    position:absolute;
+    left:0; bottom:0;
+    width:0; height:1px;
+    background:var(--brass-light);
+    transition:width 0.25s ease;
+  }
+  .nav-links a:hover::after{width:100%;}
+
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    text-decoration:none;
+    padding:13px 22px;
+    border:1px solid var(--brass);
+    color:var(--stone-light);
+    background:var(--brass);
+    border-radius:var(--radius);
+    cursor:pointer;
+    transition:background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  }
+  .btn:hover{background:transparent; color:var(--brass-light); transform:translateY(-1px);}
+  .btn.ghost{background:transparent; color:var(--stone-light);}
+  .btn.ghost:hover{background:var(--stone-light); color:var(--charcoal);}
+
+  .nav-toggle{
+    display:none;
+    background:none;
+    border:none;
+    color:var(--stone-light);
+    cursor:pointer;
+    padding:6px;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    background:
+      linear-gradient(180deg, rgba(32,34,28,0.55) 0%, rgba(32,34,28,0.86) 72%, var(--charcoal) 100%),
+      var(--charcoal);
+    overflow:hidden;
+  }
+  .hero-pattern{
+    position:absolute;
+    inset:0;
+    opacity:0.5;
+  }
+  .hero-inner{
+    position:relative;
+    z-index:2;
+    max-width:1180px;
+    margin:0 auto;
+    padding:160px 32px 120px;
+    width:100%;
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    color:var(--brass-light);
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:26px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:32px; height:1px;
+    background:var(--brass-light);
+  }
+  .hero h1{
+    color:var(--stone-light);
+    font-size:clamp(40px, 6vw, 72px);
+    line-height:1.04;
+    max-width:14ch;
+  }
+  .hero p{
+    color:var(--stone);
+    font-size:18px;
+    max-width:46ch;
+    margin-top:26px;
+  }
+  .hero-cta{
+    display:flex;
+    gap:18px;
+    margin-top:44px;
+    flex-wrap:wrap;
+  }
+
+  /* ---------- TRUST STRIP ---------- */
+  .trust{
+    background:var(--forest);
+    color:var(--stone-light);
+    padding:26px 0;
+  }
+  .trust .wrap{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:20px;
+  }
+  .trust-label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--brass-light);
+  }
+  .trust-badges{
+    display:flex;
+    gap:36px;
+    flex-wrap:wrap;
+  }
+  .badge{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:14px;
+    color:var(--stone-light);
+  }
+  .badge svg{flex:none; width:18px; height:18px; stroke:var(--brass-light);}
+
+  /* ---------- SECTION SHARED ---------- */
+  section{padding:110px 0;}
+  .section-head{
+    max-width:640px;
+    margin-bottom:64px;
+  }
+  .section-head .mono{
+    font-size:12px;
+    color:var(--brass);
+    display:block;
+    margin-bottom:14px;
+  }
+  .section-head h2{
+    font-size:clamp(30px, 4vw, 42px);
+    color:var(--charcoal);
+  }
+  .section-head p{
+    margin-top:18px;
+    color:#5b5748;
+    font-size:16px;
+  }
+  .on-dark{background:var(--charcoal); color:var(--stone-light);}
+  .on-dark .section-head p{color:var(--stone);}
+
+  /* ---------- SERVICES ---------- */
+  .services-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:1px;
+    background:var(--line-dark);
+    border:1px solid var(--line-dark);
+  }
+  .service-card{
+    background:var(--paper);
+    padding:44px 36px;
+  }
+  .service-num{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--brass);
+    margin-bottom:24px;
+    display:block;
+  }
+  .service-card svg{
+    width:34px; height:34px;
+    stroke:var(--forest);
+    margin-bottom:22px;
+  }
+  .service-card h3{
+    font-size:22px;
+    margin-bottom:12px;
+  }
+  .service-card p{
+    color:#5b5748;
+    font-size:15px;
+  }
+
+  /* ---------- PROCESS / SIGNATURE ---------- */
+  .process-list{
+    list-style:none;
+    margin:0 0 60px; padding:0;
+    border-top:1px solid var(--line);
+  }
+  .process-list li{
+    display:grid;
+    grid-template-columns:90px 1fr;
+    gap:28px;
+    padding:32px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .process-list .step-num{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    color:var(--brass-light);
+    padding-top:4px;
+  }
+  .process-list h3{
+    color:var(--stone-light);
+    font-size:21px;
+    margin-bottom:8px;
+  }
+  .process-list p{
+    color:var(--stone);
+    font-size:15px;
+    max-width:56ch;
+  }
+
+  .crosssection{
+    background:var(--charcoal-2);
+    border:1px solid var(--line);
+    padding:40px 32px 30px;
+  }
+  .crosssection-label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--brass-light);
+    margin-bottom:22px;
+  }
+  .crosssection svg{width:100%; height:auto;}
+
+  /* ---------- SERVICE AREAS ---------- */
+  .areas{
+    background:var(--stone-light);
+  }
+  .areas-layout{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+  }
+  .zone-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+  }
+  .zone{
+    border:1px solid var(--line-dark);
+    padding:16px 18px;
+    background:var(--paper);
+  }
+  .zone .mono{
+    font-size:10.5px;
+    color:var(--brass);
+    display:block;
+    margin-bottom:6px;
+  }
+  .zone-name{
+    font-family:'Fraunces', serif;
+    font-size:17px;
+  }
+  .compliance{
+    margin-top:30px;
+    padding:22px 24px;
+    background:var(--paper);
+    border-left:3px solid var(--brass);
+    font-size:14px;
+    color:#5b5748;
+  }
+
+  /* ---------- CONTACT ---------- */
+  .contact{
+    background:var(--forest);
+    color:var(--stone-light);
+  }
+  .contact-layout{
+    display:grid;
+    grid-template-columns:0.85fr 1.15fr;
+    gap:70px;
+  }
+  .contact-info h2{color:var(--stone-light);}
+  .contact-info p{color:var(--stone-light); opacity:0.75; margin-top:18px; font-size:15px;}
+  .contact-meta{
+    margin-top:40px;
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+  }
+  .contact-meta div{
+    font-size:14px;
+  }
+  .contact-meta .mono{
+    font-size:11px;
+    color:var(--brass-light);
+    display:block;
+    margin-bottom:4px;
+  }
+
+  form{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+    background:var(--charcoal);
+    padding:38px;
+    border:1px solid var(--line);
+  }
+  .field{display:flex; flex-direction:column; gap:8px;}
+  .field.full{grid-column:1 / -1;}
+  label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--stone);
+  }
+  input, select, textarea{
+    background:transparent;
+    border:none;
+    border-bottom:1px solid var(--line);
+    color:var(--stone-light);
+    font-family:'Inter', sans-serif;
+    font-size:15px;
+    padding:10px 2px;
+  }
+  input::placeholder, textarea::placeholder{color:#6b6f5f;}
+  select{appearance:none; -webkit-appearance:none; background:transparent; cursor:pointer;}
+  select option{color:#111;}
+  textarea{resize:vertical; min-height:80px;}
+  input:focus, select:focus, textarea:focus{outline:none; border-bottom-color:var(--brass-light);}
+
+  .form-submit{
+    grid-column:1 / -1;
+    margin-top:6px;
+    display:flex;
+    align-items:center;
+    gap:18px;
+  }
+  .form-note{
+    font-size:12.5px;
+    color:var(--stone);
+  }
+  .form-success{
+    display:none;
+    grid-column:1/-1;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    color:var(--brass-light);
+    border:1px dashed var(--brass);
+    padding:16px 18px;
+  }
+  .form-success.show{display:block;}
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    background:var(--charcoal);
+    color:var(--stone);
+    padding:38px 0;
+    border-top:1px solid var(--line);
+  }
+  .footer-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:14px;
+    font-size:13px;
+  }
+  .footer-links{
+    display:flex;
+    gap:24px;
+    list-style:none;
+    margin:0; padding:0;
+  }
+  .footer-links a{text-decoration:none; color:var(--stone);}
+  .footer-links a:hover{color:var(--brass-light);}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:900px){
+    .services-grid{grid-template-columns:1fr;}
+    .areas-layout{grid-template-columns:1fr;}
+    .contact-layout{grid-template-columns:1fr; gap:44px;}
+    form{grid-template-columns:1fr;}
+  }
+  @media (max-width:760px){
+    .nav-links, header .btn.ghost{display:none;}
+    .nav-toggle{display:block;}
+    .nav-links.open{
+      display:flex;
+      position:absolute;
+      top:100%; left:0; right:0;
+      background:var(--charcoal);
+      flex-direction:column;
+      padding:24px 32px;
+      gap:20px;
+      border-top:1px solid var(--line);
+    }
+    section{padding:72px 0;}
+    .trust .wrap{flex-direction:column; align-items:flex-start;}
+  }
+</style>
+</head>
+<body>
+
+<header id="site-header">
+  <nav class="nav">
+    <div class="logo">PRECISION CRAFT<small>Landscaping &mdash; Ottawa</small></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#process">Our Process</a></li>
+      <li><a href="#areas">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div style="display:flex; align-items:center; gap:14px;">
+      <a href="#contact" class="btn ghost" style="display:none;"></a>
+      <a href="#contact" class="btn">Get a Free Estimate</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <svg class="hero-pattern" viewBox="0 0 1180 820" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <pattern id="herringbone" width="80" height="80" patternUnits="userSpaceOnUse" patternTransform="rotate(0)">
+        <g fill="none" stroke="#8b8377" stroke-width="1">
+          <rect x="0" y="0" width="40" height="14" transform="rotate(45 20 7)"/>
+          <rect x="40" y="0" width="40" height="14" transform="rotate(-45 60 7)"/>
+          <rect x="0" y="40" width="40" height="14" transform="rotate(45 20 47)"/>
+          <rect x="40" y="40" width="40" height="14" transform="rotate(-45 60 47)"/>
+          <rect x="20" y="20" width="40" height="14" transform="rotate(45 40 27)"/>
+          <rect x="-20" y="20" width="40" height="14" transform="rotate(-45 0 27)"/>
+          <rect x="20" y="60" width="40" height="14" transform="rotate(45 40 67)"/>
+          <rect x="-20" y="60" width="40" height="14" transform="rotate(-45 0 67)"/>
+        </g>
+      </pattern>
+    </defs>
+    <rect width="1180" height="820" fill="url(#herringbone)"/>
+  </svg>
+  <div class="hero-inner">
+    <div class="eyebrow">Ottawa &amp; The National Capital Region</div>
+    <h1>Premium Landscape Design &amp; Hardscape Construction in Ottawa</h1>
+    <p>Engineered for durability. Crafted for luxury outdoor living. We transform Ottawa backyards into functional works of art.</p>
+    <div class="hero-cta">
+      <a href="#contact" class="btn">Schedule Your Consultation</a>
+      <a href="#process" class="btn ghost" style="border:1px solid var(--line); background:transparent;">See Our Process</a>
+    </div>
+  </div>
+</section>
+
+<div class="trust">
+  <div class="wrap">
+    <span class="trust-label">Trusted Across the National Capital Region</span>
+    <div class="trust-badges">
+      <div class="badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M12 2l2.9 6.4 6.9.7-5.2 4.8 1.5 6.9L12 17.3 5.9 20.8l1.5-6.9-5.2-4.8 6.9-.7L12 2z"/></svg>
+        5-Star Google Rating
+      </div>
+      <div class="badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/></svg>
+        Licensed Hardscape Contractor
+      </div>
+      <div class="badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M4 12l5 5L20 6"/></svg>
+        Fully Insured
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="mono">What We Build</span>
+      <h2>Core Services</h2>
+      <p>Three disciplines, one standard: engineered for the National Capital Region's freeze-thaw cycles, finished for luxury living.</p>
+    </div>
+  </div>
+  <div class="wrap" style="padding:0;">
+    <div class="services-grid">
+      <div class="service-card">
+        <span class="service-num">01</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+        <h3>Interlock &amp; Patios</h3>
+        <p>Precision-laid stone patios, walkways, and driveways built on deep, engineered gravel bases to withstand harsh Ottawa winters.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-num">02</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4"><path d="M3 21V9l9-6 9 6v12"/><path d="M3 21h18"/><path d="M9 21v-6h6v6"/></svg>
+        <h3>Retaining Walls &amp; Steps</h3>
+        <p>Structural wall systems and natural stone steps designed to correct grading issues, maximize space, and add dimensional elegance.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-num">03</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4"><path d="M12 2c2 3 4 5.5 4 8.5A4 4 0 1 1 8 10.5C8 7.5 10 5 12 2z"/><path d="M4 21c1.5-2 4-3 8-3s6.5 1 8 3"/></svg>
+        <h3>Custom Backyard Living</h3>
+        <p>Complete outdoor transformations including integrated lighting, fire features, outdoor kitchens, and pristine softscaping.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="process" class="on-dark">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="mono">Our Process</span>
+      <h2>The Precision Craft Standard</h2>
+      <p>The finished look gets the attention. The prep work earns it &mdash; here's what happens beneath every square foot we lay.</p>
+    </div>
+
+    <ol class="process-list">
+      <li>
+        <span class="step-num mono">Step&nbsp;01</span>
+        <div>
+          <h3>Consultation &amp; Concept</h3>
+          <p>We visit your Ottawa property, assess the grading, map utilities, and draft a clear layout.</p>
+        </div>
+      </li>
+      <li>
+        <span class="step-num mono">Step&nbsp;02</span>
+        <div>
+          <h3>Sub-Base Engineering</h3>
+          <p>We excavate deep, pack aggregate rigorously, and ensure flawless drainage &mdash; the layer no one sees, and the one everything depends on.</p>
+        </div>
+      </li>
+      <li>
+        <span class="step-num mono">Step&nbsp;03</span>
+        <div>
+          <h3>Master Craftsmanship</h3>
+          <p>Every stone is laser-leveled, cuts are seamless, and polymer sand is locked in for decades of structural integrity.</p>
+        </div>
+      </li>
+    </ol>
+
+    <div class="crosssection">
+      <span class="crosssection-label">Fig. 01 &mdash; Standard Interlock Cross-Section</span>
+      <svg viewBox="0 0 900 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cross-section diagram of an interlock installation showing paving stones, polymer sand joint, bedding sand, compacted aggregate base, and undisturbed soil, engineered below Ottawa's frost line.">
+        <!-- soil -->
+        <rect x="0" y="230" width="900" height="90" fill="#3a3226"/>
+        <!-- aggregate base -->
+        <rect x="0" y="180" width="900" height="50" fill="#5c554a"/>
+        <!-- bedding sand -->
+        <rect x="0" y="164" width="900" height="16" fill="#a8977a"/>
+        <!-- pavers -->
+        <g fill="#c9bfa8" stroke="#20221c" stroke-width="1">
+          <rect x="0" y="140" width="86" height="24"/>
+          <rect x="90" y="140" width="86" height="24"/>
+          <rect x="180" y="140" width="86" height="24"/>
+          <rect x="270" y="140" width="86" height="24"/>
+          <rect x="360" y="140" width="86" height="24"/>
+          <rect x="450" y="140" width="86" height="24"/>
+          <rect x="540" y="140" width="86" height="24"/>
+          <rect x="630" y="140" width="86" height="24"/>
+          <rect x="720" y="140" width="86" height="24"/>
+          <rect x="810" y="140" width="90" height="24"/>
+        </g>
+        <!-- dimension lines + labels -->
+        <g stroke="#c9a063" stroke-width="1">
+          <line x1="740" y1="140" x2="760" y2="140"/>
+          <line x1="740" y1="164" x2="760" y2="164"/>
+          <line x1="750" y1="140" x2="750" y2="164"/>
+        </g>
+        <g stroke="#c9a063" stroke-width="1">
+          <line x1="740" y1="180" x2="760" y2="180"/>
+          <line x1="740" y1="230" x2="760" y2="230"/>
+          <line x1="750" y1="180" x2="750" y2="230"/>
+        </g>
+        <g font-family="IBM Plex Mono, monospace" font-size="11" fill="#eeeae1">
+          <text x="16" y="130">PAVING STONE &mdash; 60MM</text>
+          <text x="16" y="176">BEDDING SAND &mdash; 25MM</text>
+          <text x="16" y="212">COMPACTED AGGREGATE BASE &mdash; 150&ndash;300MM</text>
+          <text x="16" y="280">UNDISTURBED / ENGINEERED SUBGRADE</text>
+        </g>
+        <g font-family="IBM Plex Mono, monospace" font-size="10" fill="#c9a063">
+          <text x="770" y="155">JOINT</text>
+          <text x="770" y="208">BASE</text>
+        </g>
+        <line x1="0" y1="120" x2="900" y2="120" stroke="#8b8377" stroke-width="1" stroke-dasharray="2 4"/>
+        <text x="16" y="112" font-family="IBM Plex Mono, monospace" font-size="10" fill="#8b8377">GRADE LINE</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section id="areas" class="areas">
+  <div class="wrap">
+    <div class="areas-layout">
+      <div>
+        <span class="mono" style="font-size:12px; color:var(--brass);">Service Areas</span>
+        <h2 style="font-size:clamp(28px,3.6vw,38px); margin-top:14px;">Proudly Serving the National Capital Region</h2>
+        <p style="margin-top:18px; color:#5b5748; font-size:16px;">From established Westboro properties to growing communities in Barrhaven and Stittsville, our crews are on-site across the region every week.</p>
+        <div class="compliance">
+          All projects strictly comply with the City of Ottawa Landscaping Guidelines, respecting local property lines, by-laws, and municipal right-of-ways.
+        </div>
+      </div>
+      <div class="zone-grid">
+        <div class="zone"><span class="mono">Zone 01</span><div class="zone-name">Barrhaven</div></div>
+        <div class="zone"><span class="mono">Zone 02</span><div class="zone-name">Manotick</div></div>
+        <div class="zone"><span class="mono">Zone 03</span><div class="zone-name">Stittsville</div></div>
+        <div class="zone"><span class="mono">Zone 04</span><div class="zone-name">Kanata</div></div>
+        <div class="zone"><span class="mono">Zone 05</span><div class="zone-name">Orleans</div></div>
+        <div class="zone"><span class="mono">Zone 06</span><div class="zone-name">Westboro</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div class="contact-layout">
+      <div class="contact-info">
+        <span class="mono" style="font-size:12px; color:var(--brass-light);">Get In Touch</span>
+        <h2 style="margin-top:14px;">Request Your Free Estimate</h2>
+        <p>Tell us about your property and project. We'll follow up within one business day to schedule an on-site consultation.</p>
+        <div class="contact-meta">
+          <div><span class="mono">Phone</span>(613) 555-0142</div>
+          <div><span class="mono">Email</span>info@precisioncraftlandscaping.ca</div>
+          <div><span class="mono">Hours</span>Mon&ndash;Fri 7:00 AM&ndash;6:00 PM, Sat 8:00 AM&ndash;2:00 PM</div>
+        </div>
+      </div>
+
+      <form id="estimateForm" novalidate>
+        <div class="field">
+          <label for="fullName">Full Name</label>
+          <input type="text" id="fullName" name="fullName" required placeholder="Jane Smith">
+        </div>
+        <div class="field">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" required placeholder="(613) 555-0100">
+        </div>
+        <div class="field">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" required placeholder="jane@email.com">
+        </div>
+        <div class="field">
+          <label for="address">Neighbourhood / Property Address</label>
+          <input type="text" id="address" name="address" required placeholder="e.g. Barrhaven">
+        </div>
+        <div class="field">
+          <label for="projectType">Project Type</label>
+          <select id="projectType" name="projectType" required>
+            <option value="" disabled selected>Select project type</option>
+            <option>Interlock Patio</option>
+            <option>Driveway</option>
+            <option>Retaining Wall</option>
+            <option>Full Backyard Reno</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="budget">Estimated Project Budget</label>
+          <select id="budget" name="budget" required>
+            <option value="" disabled selected>Select budget range</option>
+            <option>Under $15,000</option>
+            <option>$15,000 &ndash; $30,000</option>
+            <option>$30,000 &ndash; $60,000</option>
+            <option>$60,000+</option>
+          </select>
+        </div>
+        <div class="field full">
+          <label for="message">Message / Details</label>
+          <textarea id="message" name="message" placeholder="Tell us about your project..."></textarea>
+        </div>
+        <div class="form-submit">
+          <button type="submit" class="btn">Submit Request</button>
+          <span class="form-note">We respond within one business day.</span>
+        </div>
+        <div class="form-success mono" id="formSuccess">Request received &mdash; we'll be in touch shortly.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-row">
+    <div>Precision Craft Landscaping &copy; 2026. All rights reserved.</div>
+    <div class="mono" style="font-size:11.5px; color:var(--stone);">Mon&ndash;Fri 7:00 AM&ndash;6:00 PM &nbsp;|&nbsp; Sat 8:00 AM&ndash;2:00 PM</div>
+    <ul class="footer-links">
+      <li><a href="#">Privacy Policy</a></li>
+      <li><a href="#">Terms of Service</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+  const header = document.getElementById('site-header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', isOpen);
+  });
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+  }));
+
+  const form = document.getElementById('estimateForm');
+  const success = document.getElementById('formSuccess');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if(!form.checkValidity()){
+      form.reportValidity();
+      return;
+    }
+    success.classList.add('show');
+    form.reset();
+  });
+</script>
+
+</body>
+</html>
